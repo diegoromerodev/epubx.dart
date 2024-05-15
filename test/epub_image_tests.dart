@@ -8,7 +8,7 @@ import 'package:test/test.dart';
 import 'package:epubx/epubx.dart';
 
 main() async {
-  String fileName = "MY VAMPIRE SYSTEM (JKSManga) (Z-Library).epub";
+  String fileName = "kundera.epub";
   String fullPath =
       path.join(io.Directory.current.path, "test", "res", fileName);
   var targetFile = new io.File(fullPath);
@@ -21,9 +21,9 @@ main() async {
 
     expect(epubRef.CoverImage, isNotNull);
 
-    // expect(3, epubRef.CoverImage.format);
-    // expect(581, epubRef.CoverImage.width);
-    // expect(1034, epubRef.CoverImage.height);
+    expect(3, epubRef.CoverImage?.format.index);
+    expect(600, epubRef.CoverImage?.width);
+    expect(900, epubRef.CoverImage?.height);
   });
 
   test("Test Epub Ref Image", () async {
